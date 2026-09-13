@@ -1583,6 +1583,7 @@ class TaskFlowApp {
     this.renderSidebarCountsAndCategories();
     this.renderStats();
     this.renderPopulateSelects();
+    this.updateUserProfileDisplay();
     
     if (this.currentView === 'dashboard') {
       this.renderDashboard();

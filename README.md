@@ -1,142 +1,212 @@
-# TaskFlow
+# TASKFLOW
 
-A modern, minimalist task management application built with vanilla HTML5, CSS3, and JavaScript ES6+. Designed as a frontend portfolio project demonstrating clean architecture, responsive design, and polished UI/UX.
+> A modern, minimalist task management application built with vanilla HTML5, CSS3, and JavaScript ES6+. No frameworks, no build tools, no backend.
 
-![TaskFlow](assets/icons/favicon.svg)
+**[Live Demo →](https://ucokkk6173.github.io/TaskFlow/)** · **[Repository →](https://github.com/ucokkk6173/TaskFlow)**
 
-## Overview
+---
 
-TaskFlow is a single-page productivity application that helps users manage tasks with a clean, Linear-inspired interface. It features a productivity dashboard, Kanban board, Pomodoro focus timer, and full CRUD operations — all persisted to localStorage with zero backend dependencies.
+## Screenshots
+
+### Dashboard — Light Mode
+
+![Dashboard Light Mode](assets/screenshots/dashboard-light.png)
+
+### Kanban Board
+
+![Kanban Board](assets/screenshots/kanban-desktop.png)
+
+### Mobile View
+
+![Mobile View](assets/screenshots/dashboard-mobile.png)
+
+### Tablet View
+
+![Tablet View](assets/screenshots/dashboard-tablet.png)
+
+---
 
 ## Features
 
-### Task Management
-- **Create, Edit, Delete** tasks with title, description, priority, category, status, due date, and due time
-- **Subtasks** — add checklist items within each task, track completion progress
-- **Bulk operations** — select multiple tasks to complete, change priority, or delete at once
-- **Priority levels** — Urgent, High, Medium, Low with color-coded badges
+| Feature | Description |
+|---|---|
+| **Task CRUD** | Create, edit, delete tasks with title, description, priority, category, status, due date, and due time |
+| **Subtasks** | Add checklist items within each task, track completion progress |
+| **Search** | Real-time search across titles, descriptions, categories, and subtask text |
+| **Filter** | Status tabs (All, Active, Completed, Today, Upcoming, Overdue) and category dropdown |
+| **Sorting** | 6 sort options: Newest, Oldest, Priority High→Low, Priority Low→High, Deadline nearest, Deadline latest |
+| **Category** | Create custom categories with color accents, filter tasks by category |
+| **Priority** | 4 levels: Urgent, High, Medium, Low — color-coded badges |
+| **Deadline** | Due date and time with overdue detection |
+| **Dashboard** | Productivity metrics, progress bar, today's priorities, category breakdown |
+| **Kanban Board** | Drag-and-drop columns: To Do, In Progress, Completed |
+| **Pomodoro** | Focus timer with 25/5/15 minute modes, circular SVG progress, audio chimes |
+| **Dark / Light Mode** | Theme toggle persisted to localStorage |
+| **Keyboard Shortcuts** | N (new task), / (search), 1-4 (views), T (theme), ? (shortcuts), Esc |
+| **Toast Notifications** | Feedback on every action with auto-dismiss |
+| **Responsive Design** | Mobile, tablet, and desktop layouts |
+| **Settings** | User profile, greeting style, sound toggle, confetti toggle |
+| **Export / Import** | Backup and restore workspace data as JSON |
+| **localStorage** | All data persisted client-side, no backend required |
 
-### Views
-- **List View** — clean linear task list with inline actions
-- **Kanban Board** — drag-and-drop cards across To Do, In Progress, and Completed columns
-- **Focus Mode** — Pomodoro timer with 25/5/15 minute modes, circular SVG progress, and audio chimes
-
-### Dashboard
-- Productivity metrics (total, completed, pending, overdue)
-- Progress bar with completion percentage
-- Today's priority tasks
-- Category breakdown with per-category progress
-
-### Search, Filter & Sort
-- **Search** — real-time search across titles, descriptions, categories, and subtask text
-- **Filter tabs** — All, Active, Completed, Today, Upcoming, Overdue
-- **Category filter** — dropdown filter by task category
-- **Sort** — Newest, Oldest, Priority (High→Low / Low→High), Deadline (nearest / latest)
-
-### Settings & Data
-- **Dark/Light theme** — toggle with CSS custom properties, persisted to localStorage
-- **Sound effects** — Web Audio API synthesized chimes (no external audio files)
-- **Confetti celebrations** — particle effects on task completion
-- **Export/Import JSON** — backup and restore all workspace data
-- **Reload sample data** — reset to pre-loaded demo tasks
-
-### Responsive Design
-Optimized for all screen sizes:
-- **Mobile**: 360px, 375px, 390px, 420px
-- **Tablet**: 768px – 1024px
-- **Desktop**: 1440px – 1920px+
-
-Mobile features:
-- Collapsible sidebar drawer with overlay
-- Bottom-sheet modals on small screens
-- Scrollable filter tabs
-- Touch-friendly task cards with always-visible actions
-
-### Accessibility
-- Keyboard shortcuts (N, /, 1-4, T, ?, Esc)
-- Focus-visible outlines on interactive elements
-- ARIA attributes on dialogs and navigation
-- Reduced-motion support via `prefers-reduced-motion`
-- High contrast mode support
+---
 
 ## Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
+|---|---|
 | Structure | HTML5 semantic markup |
-| Styling | CSS3 with Custom Properties, Grid, Flexbox |
-| Logic | Vanilla JavaScript ES6+ (Class-based architecture) |
+| Styling | CSS3 — Custom Properties, Grid, Flexbox, animations |
+| Logic | Vanilla JavaScript ES6+ (class-based architecture) |
+| Storage | localStorage |
 | Icons | Lucide Icons (CDN) |
 | Fonts | Plus Jakarta Sans, Outfit, JetBrains Mono (Google Fonts) |
 | Effects | canvas-confetti (CDN) |
-| Audio | Web Audio API (native, no external files) |
-| Storage | localStorage |
+| Audio | Web Audio API — synthesized chimes, no external audio files |
 
-**No frameworks. No build tools. No backend.**
+---
 
 ## Getting Started
 
-1. Clone or download this repository
-2. Open `index.html` in any modern browser
-3. Start managing tasks
+**Option 1 — Direct open:**
+
+Clone or download, then open `index.html` in any modern browser.
+
+**Option 2 — Local server (optional):**
 
 ```bash
-# If using a local server (optional)
+# Using Node.js
 npx serve .
-# or
+
+# Using Python
 python -m http.server 8000
 ```
 
-## File Structure
+---
+
+## Project Structure
 
 ```
 TaskFlow/
-├── index.html          # Main HTML (1178 lines)
-├── style.css           # All styles, responsive, animations (4209 lines)
-├── script.js           # Application logic (2603 lines)
+├── index.html
+├── style.css
+├── script.js
+├── README.md
 ├── assets/
-│   └── icons/
-│       ├── favicon.svg # App favicon
-│       └── logo.svg    # Brand logo (optional)
-└── README.md
+│   ├── icons/
+│   │   └── favicon.svg
+│   └── screenshots/
+│       ├── dashboard-desktop.png
+│       ├── dashboard-light.png
+│       ├── dashboard-mobile.png
+│       ├── dashboard-tablet.png
+│       └── kanban-desktop.png
+└── .gitignore
 ```
+
+---
 
 ## Architecture
 
-The application uses a clean class-based architecture:
+The application is organized into four classes:
 
-- **`TaskRepository`** — data layer handling localStorage CRUD operations
-- **`SoundService`** — Web Audio API synthesizer for chime effects
-- **`PomodoroService`** — timer engine with session tracking
-- **`TaskFlowApp`** — main controller orchestrating UI rendering, event handling, and state management
+| Class | Responsibility |
+|---|---|
+| `TaskRepository` | Data layer — localStorage CRUD operations for tasks and categories |
+| `SoundService` | Web Audio API synthesizer for completion, pop, and trash chimes |
+| `PomodoroService` | Timer engine — session tracking, mode switching, tick notifications |
+| `TaskFlowApp` | Main controller — UI rendering, event handling, state management |
 
-State is managed through class properties and synchronized across views on every `render()` call.
+State is managed through class properties and synchronized across all views on every `render()` call.
+
+---
+
+## Responsive Design
+
+The UI adapts across all screen sizes:
+
+- **Mobile** — collapsible sidebar drawer, bottom-sheet modals, scrollable filter tabs, touch-friendly task cards
+- **Tablet** — two-column Kanban, adjusted spacing
+- **Desktop** — full sidebar, multi-column metrics, drag-and-drop Kanban
+
+---
+
+## Accessibility
+
+- `aria-label` on interactive elements (buttons, navigation, modals)
+- `aria-hidden` on modals and overlay elements
+- `aria-expanded` on toggle buttons (sidebar, dropdowns)
+- `role="dialog"` and `aria-modal` on modal dialogs
+- Keyboard navigation with focus trap in modals
+- `:focus-visible` outlines on all interactive elements
+- `prefers-reduced-motion` support — animations disabled for users who prefer reduced motion
+- `prefers-contrast: high` support — enhanced borders for high contrast mode
+- Semantic HTML (`<nav>`, `<main>`, `<aside>`, `<header>`, `<section>`)
+
+---
 
 ## Current Scope
 
-This is a **frontend-only** portfolio project. All data is persisted in the browser's localStorage.
+This is a **frontend-only** portfolio project.
+
+- All data is stored in the browser's `localStorage`
+- No backend, no database, no API, no authentication
+- Single-user, client-side only
+
+---
 
 ## Future Development
 
-Potential enhancements for a production version:
+The following are planned enhancements, **not** currently implemented:
+
 - Backend API with database persistence
 - User authentication and multi-user support
 - Real-time collaboration
-- Due date reminders and notifications
+- Due date reminders and push notifications
 - Task attachments and file uploads
 - Progressive Web App (PWA) offline support
 - Internationalization (i18n)
 
+---
+
+## What This Project Demonstrates
+
+Building TASKFLOW reinforced practical skills across the full frontend stack:
+
+- **DOM manipulation** — dynamic rendering of tasks, kanban cards, modals, and dashboard widgets
+- **Event handling** — click, input, drag-and-drop, keyboard shortcuts, and global listeners
+- **State management** — class-based state with centralized render cycle
+- **Data persistence** — localStorage read/write with fallback and error handling
+- **Responsive layout** — CSS Grid, Flexbox, media queries, mobile-first approach
+- **UI/UX design** — modal management, toast notifications, empty states, loading states
+- **Filtering & sorting** — multi-criteria filtering with combined search, category, and status
+- **Kanban interaction** — drag-and-drop with keyboard-accessible alternative (move select)
+- **Pomodoro timer** — interval-based timer with SVG progress and Web Audio API
+- **Theme system** — CSS custom properties for dark/light mode with localStorage sync
+- **Accessibility** — ARIA attributes, focus management, reduced-motion, high contrast support
+- **Git workflow** — incremental commits, version control, GitHub Pages deployment
+
+---
+
+## Portfolio Value
+
+This project demonstrates the ability to:
+
+- Build a complete, polished single-page application without frameworks
+- Implement complex interactive features (drag-and-drop, real-time filtering, timer)
+- Create responsive layouts that work across mobile, tablet, and desktop
+- Write maintainable, well-organized vanilla JavaScript with class-based architecture
+- Handle client-side data persistence and state synchronization
+- Deliver a production-quality UI with attention to accessibility and usability
+
+---
+
 ## Browser Support
 
-Tested on:
-- Chrome 90+
-- Firefox 90+
-- Safari 14+
-- Edge 90+
+Tested on Chrome 90+, Firefox 90+, Safari 14+, and Edge 90+. Requires ES6+ support.
 
-Requires ES6+ support (classes, template literals, arrow functions, optional chaining).
+---
 
 ## License
 
-This project is open source and available for portfolio demonstration purposes.
+Open source — available for portfolio demonstration purposes.

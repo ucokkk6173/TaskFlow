@@ -1120,8 +1120,17 @@ class TaskFlowApp {
 
   updateUserProfileDisplay() {
     const initial = this.userName ? this.userName.charAt(0).toUpperCase() : 'U';
+
+    // Primary: target by ID (most reliable)
+    const headerAvatar = document.getElementById('header-avatar-initial');
+    if (headerAvatar) headerAvatar.textContent = initial;
+    const settingsAvatar = document.getElementById('settings-avatar-initial');
+    if (settingsAvatar) settingsAvatar.textContent = initial;
+
+    // Fallback: target by class (catches any other avatar instances)
     document.querySelectorAll('.avatar-initials').forEach(el => el.textContent = initial);
     document.querySelectorAll('.avatar-initials-lg').forEach(el => el.textContent = initial);
+
     document.querySelectorAll('.profile-name, .profile-full-name').forEach(el => el.textContent = this.userName);
     const settingsUserName = document.getElementById('settings-user-name-display');
     if (settingsUserName) settingsUserName.textContent = this.userName;

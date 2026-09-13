@@ -1126,6 +1126,8 @@ class TaskFlowApp {
     if (headerAvatar) headerAvatar.textContent = initial;
     const settingsAvatar = document.getElementById('settings-avatar-initial');
     if (settingsAvatar) settingsAvatar.textContent = initial;
+    const settingsCardAvatar = document.getElementById('settings-card-avatar-initial');
+    if (settingsCardAvatar) settingsCardAvatar.textContent = initial;
 
     // Fallback: target by class (catches any other avatar instances)
     document.querySelectorAll('.avatar-initials').forEach(el => el.textContent = initial);

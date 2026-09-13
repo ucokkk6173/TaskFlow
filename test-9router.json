@@ -1,0 +1,10 @@
+﻿{
+  "model": "oc/mimo-v2.5-free",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Balas hanya dengan: ROUTER TEST OK"
+    }
+  ],
+  "stream": false
+}

@@ -376,10 +376,13 @@ button {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  width: 100%;
   padding: 0.45rem 0.65rem;
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
   font-size: 0.84rem;
+  text-align: left;
+  margin: 0;
   transition: var(--ease-fast);
   cursor: pointer;
 }

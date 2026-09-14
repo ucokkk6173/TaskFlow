@@ -1664,17 +1664,23 @@ class TaskFlowApp {
         const catCount = all.filter(t => t.category === cat.id).length;
         const isActive = this.currentCategoryFilter === cat.id;
         return `
-          <div class="category-nav-item ${isActive ? 'active' : ''}" data-category-id="${cat.id}">
+          <button class="category-nav-item ${isActive ? 'active' : ''}" data-category-id="${cat.id}">
             <span class="category-dot" style="--cat-color: ${cat.color};"></span>
             <span>${this.escapeHTML(cat.name)}</span>
             <span class="nav-counter">${catCount}</span>
-          </div>
+          </button>
         `;
       }).join('');
 
       this.categoriesList.querySelectorAll('.category-nav-item').forEach(item => {
         item.addEventListener('click', () => {
           this.navigate('category', item.dataset.categoryId);
+        });
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.navigate('category', item.dataset.categoryId);
+          }
         });
       });
     }

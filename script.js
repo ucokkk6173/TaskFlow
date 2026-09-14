@@ -1168,7 +1168,7 @@ class TaskFlowApp {
     if (target === 'dashboard') {
       this.currentView = 'dashboard';
       this.showPane('view-dashboard-container');
-    } else if (target === 'all') {
+    } else if (target === 'all' || target === 'list') {
       this.currentView = 'list';
       this.currentStatusFilter = 'all';
       this.currentCategoryFilter = 'all';
